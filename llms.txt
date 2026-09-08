@@ -1,0 +1,40 @@
+# Youbout
+
+> Youbout (youbout.com) is an AI-powered growth platform for local businesses. It helps businesses collect more customer reviews, improve Google visibility, build online trust, automate customer engagement, generate social proof, and become discoverable inside AI search tools like ChatGPT, Gemini, and Perplexity.
+
+## What Youbout does
+
+- **Review collection**: QR codes at the counter or on receipts, plus automated review requests via SMS, email, and WhatsApp. Customers can leave public reviews or share private feedback.
+- **Reply Agent (AI)**: analyzes incoming reviews and automatically generates professional responses in the business's own tone, incorporating services, locations, and customer sentiment. Keeps the Google Business profile consistently active.
+- **Share Agent (AI)**: turns customer reviews into ready-to-publish social content — captions, quote graphics, and testimonial posts for Facebook and Instagram.
+- **GEO Agent (AI)**: generates website and blog content from real review language and local search intent, optimized for both Google and AI-powered discovery platforms (ChatGPT, Gemini, Perplexity).
+- **Team-based collection**: leaderboards that help staff generate reviews consistently.
+- **Listings and widgets**: Google listing management, AI website, and embeddable review widgets.
+
+## Who it is for
+
+Local businesses: restaurants, dentists, beauty salons, gyms, coffee shops, boutiques, clinics, home services, and other customer-facing businesses with one or more locations.
+
+## Pricing
+
+Three self-serve plans, each with a 30-day free trial and no credit card required:
+
+- **Silver** — $49/month or $499/year (₺499/month or ₺4.999/year): review monitoring, automated requests, core review platforms, Google listing management, AI website and widgets, Facebook and Instagram automation.
+- **Gold** — $99/month or $999/year (₺799/month or ₺7.999/year): everything in Silver plus expanded review platform coverage and AI-generated review responses. Most popular plan.
+- **Premium** — $199/month or $1.999/year (₺999/month or ₺9.999/year): everything in Gold plus full review platform coverage (20+ platforms), multi-location management, and the full AI agent suite.
+
+Checkout is handled by Stripe. Sign up at https://youbout.com/#pricing
+
+## Frequently asked questions
+
+**Does Youbout filter or hide negative reviews?**
+No. Customers can leave public reviews or share private feedback. Private feedback helps businesses understand and improve the customer experience.
+
+**How long does setup take?**
+Businesses are typically up and running in days: connect the business profile, start collecting reviews, and let the AI agents automate replies, social content, and visibility.
+
+**Which review platforms are supported?**
+Google, Yelp, TripAdvisor, Booking.com, Airbnb, Trustpilot, Facebook, OpenTable, and more — up to 20+ platforms on the Premium plan.
+
+**Is there a free trial?**
+Yes. Every plan includes a 30-day free trial with no credit card required.

@@ -3,16 +3,831 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Youbout</title>
-<meta name="robots" content="noindex">
+<title>Youbout — More Reviews, More Visibility, More Local Customers</title>
+<meta name="description" content="Youbout helps local businesses collect reviews, improve Google visibility, and turn customer feedback into growth with AI-powered automation. 30-day free trial, no credit card required.">
+<link rel="canonical" href="https://youbout.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Youbout">
+<meta property="og:url" content="https://youbout.com/">
+<meta property="og:title" content="Youbout — More Reviews, More Visibility, More Local Customers">
+<meta property="og:description" content="AI-powered review collection, Google visibility, and social proof automation for local businesses. 30-day free trial, no credit card required.">
+<meta property="og:image" content="https://youbout.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Youbout — More Reviews, More Visibility, More Local Customers">
+<meta name="twitter:description" content="AI-powered review collection, Google visibility, and social proof automation for local businesses. 30-day free trial, no credit card required.">
+<meta name="twitter:image" content="https://youbout.com/og-image.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Youbout",
+  "url": "https://youbout.com",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "Youbout is an AI-powered growth platform for local businesses: review collection via QR codes and automated requests, AI-generated review responses, social content automation, and improved visibility across Google and AI search platforms like ChatGPT, Gemini, and Perplexity.",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "49",
+    "highPrice": "199",
+    "offerCount": "3"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  body{margin:0;font-family:'Poppins',system-ui,sans-serif;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:24px}
-  img{width:min(320px,70vw);height:auto}
-  p{color:#666;font-size:18px;letter-spacing:.5px}
+:root{
+  --primary:#2878F0;
+  --primary-deep:#1B5FD0;
+  --primary-dark:#154CB0;
+  --primary-soft:#EAF2FE;
+  --primary-fade:#F6F9FF;
+  --red:#F05028;
+  --red-deep:#D03A18;
+  --yellow:#F0A000;
+  --amber:#E09600;
+  --green:#28A028;
+  --green-deep:#1E7E1E;
+  --star:#F2A600;
+  --ink:#16181D;
+  --ink-2:#333941;
+  --gray:#5F6672;
+  --gray-light:#9AA3AF;
+  --line:#E7EBF1;
+  --white:#FFFFFF;
+  --radius:7px;
+  --shadow-sm:0 1px 3px rgba(22,24,29,.06),0 4px 14px rgba(22,24,29,.05);
+  --shadow-md:0 4px 12px rgba(22,24,29,.07),0 16px 40px rgba(22,24,29,.08);
+  --shadow-lg:0 8px 24px rgba(22,24,29,.09),0 32px 80px rgba(22,24,29,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:'Poppins',system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--primary-deep);text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(28px,4vw,42px);font-weight:700}
+.kicker{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--primary-deep);background:var(--primary-soft);padding:6px 14px;border-radius:100px;margin-bottom:18px}
+.sub{font-size:18px;color:var(--gray);max-width:640px;margin-top:16px}
+.center{text-align:center}.center .sub{margin-left:auto;margin-right:auto}
+
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ===== NAVBAR ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+nav.scrolled{border-bottom-color:var(--line);box-shadow:0 2px 20px rgba(22,24,29,.05)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo img{height:38px;width:auto}
+.nav-links{display:flex;gap:34px}
+.nav-links a{color:var(--ink-2);font-size:15px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--primary-deep)}
+.nav-cta{display:flex;gap:12px;align-items:center}
+.btn{display:inline-block;font-family:inherit;font-size:15px;font-weight:600;padding:11px 24px;border-radius:var(--radius);cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s;border:none}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 4px 14px rgba(40,120,240,.35)}
+.btn-primary:hover{background:var(--primary-deep);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink-2);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--primary);color:var(--primary-deep)}
+.btn-big{font-size:17px;padding:15px 34px}
+
+/* ===== HERO ===== */
+.hero{padding:170px 0 100px;background:linear-gradient(180deg,var(--primary-fade) 0%,#fff 85%);position:relative}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(36px,5vw,58px);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--primary);position:relative}
+.hero .sub{font-size:19px}
+.hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.hero-note{margin-top:18px;font-size:14px;color:var(--gray-light)}
+.hero-note b{color:var(--gray)}
+
+/* hero mockup */
+.hero-visual{position:relative;min-height:460px}
+.mock-card{background:#fff;border:1px solid var(--line);border-radius:calc(var(--radius) + 5px);box-shadow:var(--shadow-md)}
+.mock-main{position:absolute;inset:20px 0 auto 40px;width:min(420px,90%);padding:22px;animation:float 7s ease-in-out infinite}
+.mock-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.mock-head b{font-size:14px}
+.pill{font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;background:var(--primary-soft);color:var(--primary-dark)}
+.rating-row{display:flex;align-items:baseline;gap:10px}
+.rating-big{font-size:40px;font-weight:800}
+.stars{color:var(--star);letter-spacing:2px;font-size:16px}
+.rating-sub{font-size:12px;color:var(--gray-light)}
+.bars{margin-top:14px;display:grid;gap:8px}
+.bar{height:8px;border-radius:100px;background:var(--primary-soft);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:100px;background:linear-gradient(90deg,var(--primary),var(--primary-deep))}
+.bar-label{display:flex;justify-content:space-between;font-size:11px;color:var(--gray);margin-bottom:2px}
+.mock-review{position:absolute;right:0;top:210px;width:min(300px,85%);padding:16px;animation:float 8s ease-in-out infinite 1s}
+.rev-top{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#7FAcF7,#2878F0);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rev-top b{font-size:13px;display:block;line-height:1.2}
+.rev-top span{font-size:11px;color:var(--gray-light)}
+.rev-text{font-size:12.5px;color:var(--ink-2)}
+.mock-sms{position:absolute;left:0;bottom:0;width:min(280px,80%);padding:14px 16px;animation:float 6s ease-in-out infinite .5s}
+.sms-row{display:flex;gap:8px;align-items:center}
+.sms-dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0}
+.sms-row span{font-size:12px;color:var(--ink-2)}
+.sms-row b{color:var(--ink)}
+.ai-chip{display:inline-flex;align-items:center;gap:8px;margin-top:10px;background:var(--primary-soft);border-radius:100px;padding:5px 12px;font-size:11px;font-weight:600;color:var(--primary-dark)}
+.ai-dot{width:7px;height:7px;border-radius:50%;background:var(--primary);animation:pulse 1.6s infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* platform strip */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;background:#fff}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:14px 30px;justify-content:center;align-items:center}
+.strip span{font-size:14px;font-weight:600;color:var(--gray-light);letter-spacing:.02em}
+.strip small{width:100%;text-align:center;font-size:12px;color:var(--gray-light);margin-bottom:4px;font-weight:500}
+
+/* ===== PROBLEM ===== */
+.problem{background:#fff}
+.prob-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:48px}
+.prob-card{border:1px solid var(--line);border-radius:calc(var(--radius) + 5px);padding:28px;background:var(--primary-fade)}
+.prob-card h3{font-size:18px;margin-bottom:8px}
+.prob-card p{font-size:14.5px;color:var(--gray)}
+.prob-quote{margin-top:56px;padding:36px 40px;border-left:4px solid var(--primary);background:var(--primary-soft);border-radius:var(--radius);font-size:clamp(18px,2.4vw,23px);font-weight:600;line-height:1.5;color:var(--ink-2)}
+
+/* ===== COLLECT ===== */
+.collect{background:linear-gradient(180deg,#fff,var(--primary-fade))}
+.collect-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.feat-card{background:#fff;border:1px solid var(--line);border-radius:calc(var(--radius) + 5px);padding:28px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:10px}
+.feat-card h3{font-size:19px}
+.feat-card>p{font-size:14.5px;color:var(--gray)}
+.feat-visual{margin-top:auto;padding-top:20px}
+/* qr mockup */
+.qr-mock{background:var(--primary-fade);border:1px solid var(--line);border-radius:var(--radius);padding:18px;text-align:center}
+.qr-box{width:92px;height:92px;margin:0 auto 10px;border-radius:8px;background:
+ conic-gradient(var(--ink) 25%,transparent 0 50%,var(--ink) 0 75%,transparent 0) 0 0/22px 22px,
+ #fff;border:6px solid #fff;outline:2px solid var(--ink);position:relative}
+.qr-mock b{font-size:13px;display:block}
+.qr-mock span{font-size:11px;color:var(--gray-light)}
+/* sms mockup */
+.chat{display:grid;gap:8px}
+.bubble{max-width:88%;padding:10px 14px;font-size:12.5px;border-radius:14px;line-height:1.45}
+.bubble.out{background:var(--primary);color:#fff;border-bottom-right-radius:4px;justify-self:end}
+.bubble.in{background:#EEF1F5;color:var(--ink-2);border-bottom-left-radius:4px}
+.chat small{font-size:10.5px;color:var(--gray-light);justify-self:end}
+/* leaderboard */
+.board{display:grid;gap:8px}
+.board-row{display:flex;align-items:center;gap:10px;background:var(--primary-fade);border:1px solid var(--line);border-radius:var(--radius);padding:8px 12px}
+.board-row .rank{font-weight:700;font-size:13px;color:var(--primary-deep);width:18px}
+.board-row .name{font-size:13px;font-weight:600;flex:1}
+.board-row .cnt{font-size:12px;color:var(--gray);white-space:nowrap}
+.board-row.top{background:var(--primary-soft);border-color:#BBD4FA}
+
+/* ===== AGENTS ===== */
+.agents{background:#fff}
+.agent-row{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;margin-top:72px}
+.agent-row.flip .agent-info{order:2}
+.agent-portrait{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.agent-face{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff;box-shadow:0 0 0 5px var(--primary-soft),0 6px 18px rgba(22,24,29,.18)}
+.agent-face.reply{background:linear-gradient(135deg,var(--primary),var(--primary-dark))}
+.agent-face.share{background:linear-gradient(135deg,var(--red),var(--red-deep))}
+.agent-face.geo{background:linear-gradient(135deg,var(--green),var(--green-deep))}
+.agent-portrait b{font-size:20px;display:block}
+.agent-portrait span{font-size:13px;color:var(--primary-deep);font-weight:600}
+.agent-info p{font-size:15.5px;color:var(--gray);margin-bottom:14px}
+.agent-result{display:flex;gap:10px;align-items:flex-start;background:var(--primary-soft);border-radius:var(--radius);padding:14px 16px;font-size:14px;font-weight:500;color:var(--ink-2)}
+.agent-result::before{content:"✓";color:var(--green);font-weight:800}
+.agent-mock{background:#fff;border:1px solid var(--line);border-radius:calc(var(--radius) + 5px);box-shadow:var(--shadow-md);padding:22px}
+.mock-label{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;color:var(--gray-light);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+.mock-label i{width:8px;height:8px;border-radius:50%;background:var(--primary);font-style:normal}
+.g-review{border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin-bottom:12px}
+.ai-reply{background:var(--primary-fade);border:1px dashed #A9C9F8;border-radius:var(--radius);padding:14px;font-size:12.5px;color:var(--ink-2)}
+.ai-reply mark{background:var(--primary-soft);color:var(--primary-dark);padding:0 3px;border-radius:3px;font-weight:600}
+.ai-reply .ai-chip{margin-top:10px}
+/* share mock */
+.insta{border:1px solid var(--line);border-radius:calc(var(--radius) + 3px);overflow:hidden}
+.insta-head{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.insta-head b{font-size:13px}
+.insta-quote{background:linear-gradient(135deg,var(--red),var(--yellow));color:#fff;padding:34px 26px;font-size:16px;font-weight:600;line-height:1.5;text-align:center}
+.insta-quote small{display:block;margin-top:12px;font-size:11.5px;font-weight:500;opacity:.9}
+.insta-foot{padding:10px 14px;font-size:12px;color:var(--gray)}
+.insta-foot b{color:var(--ink)}
+/* geo mock */
+.article{border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.article .tag{font-size:10.5px;font-weight:700;color:var(--green-deep);text-transform:uppercase;letter-spacing:.06em}
+.article h4{font-size:16px;margin:6px 0 10px;line-height:1.35}
+.skeleton{height:7px;border-radius:100px;background:#EDF0F4;margin-bottom:7px}
+.skeleton.short{width:70%}
+.geo-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.geo-chip{font-size:11px;font-weight:600;background:#E7F5E7;color:var(--green-deep);border-radius:100px;padding:4px 11px}
+
+/* ===== FLYWHEEL ===== */
+.flywheel{background:linear-gradient(180deg,var(--primary-fade),#fff)}
+.fly-visual{position:relative;width:min(560px,92vw);height:min(560px,92vw);margin:60px auto 0}
+.fly-ring{position:absolute;inset:8%;border:2px dashed #A9C9F8;border-radius:50%;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fly-hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:31%;aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:clamp(11px,1.6vw,15px);box-shadow:0 12px 40px rgba(40,120,240,.4);padding:10px}
+.fly-hub span{font-weight:500;font-size:.8em;opacity:.9}
+.fly-node{position:absolute;width:32%;background:#fff;border:1px solid var(--line);border-radius:calc(var(--radius) + 3px);box-shadow:var(--shadow-sm);padding:12px 13px;text-align:center}
+.fly-node b{font-size:clamp(11px,1.5vw,13.5px);display:block;line-height:1.3}
+.fly-node span{font-size:clamp(9.5px,1.25vw,11.5px);color:var(--gray);line-height:1.35;display:block;margin-top:3px}
+.fly-node .n{width:22px;height:22px;border-radius:50%;background:var(--primary);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 7px}
+.fly-node .n.c2{background:var(--red)}
+.fly-node .n.c3{background:var(--amber)}
+.fly-node .n.c4{background:var(--green)}
+.fly-node .n.c5{background:var(--primary-dark)}
+.fly-cap{text-align:center;margin-top:48px;font-size:17px;font-weight:600;color:var(--ink-2)}
+
+/* ===== BENEFITS ===== */
+.benefits{background:#fff}
+.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.ben-card{border:1px solid var(--line);border-radius:calc(var(--radius) + 5px);padding:26px;background:#fff;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:8px}
+.ben-card h3{font-size:17px}
+.ben-card p{font-size:13.5px;color:var(--gray)}
+.ben-vis{margin-top:auto;padding-top:18px}
+.spark{display:flex;align-items:flex-end;gap:5px;height:52px}
+.spark i{flex:1;background:linear-gradient(180deg,var(--primary),var(--primary-deep));border-radius:3px 3px 0 0;opacity:.9}
+.rank-vis{display:grid;gap:6px}
+.rank-line{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--gray)}
+.rank-line .pin{color:var(--red);font-weight:700}
+.rank-line.you{font-weight:700;color:var(--ink);background:var(--primary-soft);border-radius:5px;padding:4px 8px}
+.stars-vis{font-size:22px;color:var(--star);letter-spacing:3px}
+.stars-vis+small{font-size:11.5px;color:var(--gray-light)}
+.minipost{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;font-size:11px}
+.minipost .mp-img{background:linear-gradient(135deg,var(--red),var(--yellow));color:#fff;padding:14px;text-align:center;font-weight:600;font-size:11.5px}
+.minipost .mp-cap{padding:8px 10px;color:var(--gray)}
+.aivis{display:grid;gap:6px}
+.aivis .bubble{font-size:11.5px;padding:8px 11px}
+.flowvis{display:grid;gap:7px}
+.flow-step{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--gray)}
+.flow-step i{width:16px;height:16px;border-radius:50%;background:var(--primary-soft);color:var(--primary-deep);font-style:normal;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.flow-step.on{color:var(--ink);font-weight:600}
+.flow-step.on i{background:var(--green);color:#fff}
+
+/* ===== HOW ===== */
+.how{background:linear-gradient(180deg,#fff,var(--primary-fade))}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.how-card{background:#fff;border:1px solid var(--line);border-radius:calc(var(--radius) + 5px);padding:30px;box-shadow:var(--shadow-sm);position:relative}
+.how-num{width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 4px 12px rgba(40,120,240,.35)}
+.how-card:nth-child(2) .how-num{background:var(--red);box-shadow:0 4px 12px rgba(240,80,40,.35)}
+.how-card:nth-child(3) .how-num{background:var(--green);box-shadow:0 4px 12px rgba(40,160,40,.35)}
+.how-card h3{font-size:18px;margin-bottom:6px}
+.how-card p{font-size:14px;color:var(--gray)}
+
+/* ===== PRICING ===== */
+.pricing{background:#fff}
+.toggles{display:flex;gap:16px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+.toggle{display:inline-flex;background:var(--primary-fade);border:1px solid var(--line);border-radius:100px;padding:4px}
+.toggle button{border:none;background:transparent;font-family:inherit;font-size:13.5px;font-weight:600;color:var(--gray);padding:8px 20px;border-radius:100px;cursor:pointer;transition:all .2s}
+.toggle button.on{background:var(--primary);color:#fff;box-shadow:0 2px 8px rgba(40,120,240,.4)}
+.toggle button .save{font-size:10.5px;font-weight:700;margin-left:5px;color:var(--primary-deep)}
+.toggle button.on .save{color:#fff}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;align-items:stretch}
+.price-card{border:1.5px solid var(--line);border-radius:calc(var(--radius) + 6px);padding:32px 28px;display:flex;flex-direction:column;background:#fff;position:relative}
+.price-card.hot{border-color:var(--primary);box-shadow:var(--shadow-lg)}
+.hot-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;font-size:11.5px;font-weight:700;padding:4px 16px;border-radius:100px;white-space:nowrap}
+.price-card h3{font-size:20px}
+.plan-loc{font-size:12.5px;font-weight:600;color:var(--primary-deep);margin-top:2px;min-height:19px}
+.price-line{margin:18px 0 4px;display:flex;align-items:baseline;gap:6px}
+.price-num{font-size:42px;font-weight:800;letter-spacing:-.02em}
+.price-per{font-size:14px;color:var(--gray-light)}
+.trial-line{font-size:12.5px;color:var(--gray);margin-bottom:18px}
+.trial-line b{color:var(--primary-deep)}
+.plan-feats{list-style:none;display:grid;gap:10px;margin:8px 0 26px;font-size:13.5px;color:var(--ink-2)}
+.plan-feats li{display:flex;gap:9px;align-items:flex-start}
+.plan-feats li::before{content:"✓";color:var(--green);font-weight:800;flex-shrink:0}
+.price-card .btn{margin-top:auto;text-align:center}
+.price-note{text-align:center;margin-top:28px;font-size:13px;color:var(--gray-light)}
+
+/* ===== TESTIMONIALS ===== */
+.testi{background:linear-gradient(180deg,var(--primary-fade),#fff)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.testi-card{background:#fff;border:1px solid var(--line);border-radius:calc(var(--radius) + 5px);padding:28px;box-shadow:var(--shadow-sm);position:relative}
+.sample-badge{position:absolute;top:14px;right:14px;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray-light);border:1px solid var(--line);border-radius:100px;padding:3px 9px}
+.testi-card .stars{margin-bottom:12px}
+.testi-card p{font-size:14px;color:var(--ink-2);margin-bottom:18px}
+.testi-who{display:flex;gap:12px;align-items:center}
+.testi-who b{font-size:13.5px;display:block}
+.testi-who span{font-size:12px;color:var(--gray-light)}
+
+/* ===== FINAL CTA ===== */
+.final{padding:0 0 96px}
+.final-panel{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-deep) 60%,var(--primary-dark) 100%);border-radius:calc(var(--radius) + 10px);padding:clamp(48px,7vw,80px);text-align:center;color:#fff;box-shadow:0 24px 70px rgba(27,95,208,.35)}
+.final h2{color:#fff}
+.final .sub{color:rgba(255,255,255,.9);margin-left:auto;margin-right:auto}
+.final .btn{background:#fff;color:var(--primary-dark);margin-top:30px}
+.final .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.final small{display:block;margin-top:18px;font-size:13.5px;color:rgba(255,255,255,.8)}
+
+/* ===== FOOTER ===== */
+footer{background:#0E1013;color:#fff;padding:64px 0 40px}
+.foot-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+.foot-logo img{height:52px;width:auto}
+.foot-links{display:flex;gap:56px;flex-wrap:wrap}
+.foot-col b{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#9AA0A6;margin-bottom:14px}
+.foot-col a{display:block;color:#E8EAED;font-size:14px;margin-bottom:10px;transition:color .2s}
+.foot-col a:hover{color:#7FACF7}
+.foot-bottom{border-top:1px solid #202328;margin-top:48px;padding-top:28px;font-size:13px;color:#9AA0A6;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:960px){
+  .nav-links{display:none}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual{min-height:430px;margin-top:20px}
+  .agent-row{grid-template-columns:1fr;gap:28px}
+  .agent-row.flip .agent-info{order:0}
+  .collect-grid,.ben-grid,.how-grid,.price-grid,.testi-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  section{padding:64px 0}
+  .hero{padding:130px 0 70px}
+  .prob-grid,.collect-grid,.ben-grid,.how-grid,.price-grid,.testi-grid{grid-template-columns:1fr}
+  .nav-cta .btn-ghost{display:none}
+  .fly-node span{display:none}
+}
 </style>
 </head>
 <body>
-  <img src="logo.png" alt="Youbout">
-  <p>Coming soon.</p>
+
+<nav id="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-logo" href="#top"><img src="logo.png" alt="Youbout"></a>
+    <div class="nav-links">
+      <a href="#how">How It Works</a>
+      <a href="#agents">AI Agents</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="#pricing">Log in</a>
+      <a class="btn btn-primary" href="#pricing">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">AI-powered growth for local businesses</span>
+      <h1>Get More Reviews, More Visibility, and <em>More Local Customers</em></h1>
+      <p class="sub">Youbout helps local businesses collect reviews, improve Google visibility, and turn customer feedback into growth with AI-powered automation.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary btn-big" href="#pricing">Get Started</a>
+        <a class="btn btn-ghost btn-big" href="#how">See How It Works</a>
+      </div>
+      <p class="hero-note"><b>30-day free trial.</b> No credit card required.</p>
+    </div>
+    <div class="hero-visual">
+      <div class="mock-card mock-main">
+        <div class="mock-head"><b>Reputation Overview</b><span class="pill">Last 30 days</span></div>
+        <div class="rating-row">
+          <span class="rating-big">4.8</span>
+          <span class="stars">★★★★★</span>
+        </div>
+        <div class="rating-sub">Average rating across connected platforms</div>
+        <div class="bars">
+          <div><div class="bar-label"><span>New reviews</span><span>+38</span></div><div class="bar"><i style="width:88%"></i></div></div>
+          <div><div class="bar-label"><span>Review requests sent</span><span>124</span></div><div class="bar"><i style="width:72%"></i></div></div>
+          <div><div class="bar-label"><span>AI responses published</span><span>36</span></div><div class="bar"><i style="width:64%"></i></div></div>
+        </div>
+      </div>
+      <div class="mock-card mock-review">
+        <div class="rev-top">
+          <div class="avatar">M</div>
+          <div><b>Maria G.</b><span>Google · just now</span></div>
+        </div>
+        <div class="stars" style="font-size:13px">★★★★★</div>
+        <p class="rev-text">"Amazing service, the team went above and beyond…"</p>
+        <span class="ai-chip"><span class="ai-dot"></span>AI Agent is drafting a reply</span>
+      </div>
+      <div class="mock-card mock-sms">
+        <div class="sms-row"><span class="sms-dot"></span><span><b>Review request delivered</b> via SMS</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <small>Collect and monitor reviews across the platforms your customers use</small>
+    <span>Google</span><span>Yelp</span><span>TripAdvisor</span><span>Booking.com</span><span>Trustpilot</span><span>Facebook</span><span>Airbnb</span><span>OpenTable</span><span>+ more</span>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker">Why it matters</span>
+      <h2>Your Online Reputation Impacts Every Buying Decision</h2>
+    </div>
+    <div class="prob-grid">
+      <div class="prob-card rv"><h3>Customers compare first</h3><p>Before calling or visiting, people compare local businesses online. Ratings, reviews, and photos shape the decision before you ever get a chance to.</p></div>
+      <div class="prob-card rv"><h3>Reviews build trust</h3><p>A steady flow of recent, authentic reviews signals that your business is active, reliable, and worth choosing over the competitor next door.</p></div>
+      <div class="prob-card rv"><h3>Weak visibility costs customers</h3><p>Businesses that are hard to find on Google Maps and search quietly lose customers to businesses that show up first, every single day.</p></div>
+      <div class="prob-card rv"><h3>AI search is changing discovery</h3><p>People now ask ChatGPT, Gemini, and Perplexity for recommendations. These tools learn from your reviews and online presence to decide whether to mention you.</p></div>
+    </div>
+    <div class="prob-quote rv">Your reputation is no longer just what people say about you. It is what search engines and AI platforms understand about your business.</div>
+  </div>
+</section>
+
+<!-- REVIEW COLLECTION -->
+<section class="collect">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker">Review collection</span>
+      <h2>Make It Easy for Customers to Leave Reviews</h2>
+      <p class="sub">Customers can leave public reviews or share private feedback, so you grow your reputation while understanding every customer experience.</p>
+    </div>
+    <div class="collect-grid">
+      <div class="feat-card rv">
+        <h3>QR Codes</h3>
+        <p>Customers scan and leave feedback instantly, right from the table, counter, or receipt.</p>
+        <div class="feat-visual">
+          <div class="qr-mock">
+            <div class="qr-box"></div>
+            <b>How was your visit?</b>
+            <span>Scan to share your experience</span>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card rv">
+        <h3>Automated Requests</h3>
+        <p>Send review requests automatically through SMS, email, and WhatsApp, at exactly the right moment.</p>
+        <div class="feat-visual">
+          <div class="chat">
+            <div class="bubble out">Hi Sarah! Thanks for visiting us today. Would you mind sharing your experience? It takes 30 seconds 🙏</div>
+            <small>Delivered · automated</small>
+            <div class="bubble in">Of course! You were great ⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-card rv">
+        <h3>Team-Based Collection</h3>
+        <p>Help your team generate more reviews consistently with friendly, motivating leaderboards.</p>
+        <div class="feat-visual">
+          <div class="board">
+            <div class="board-row top"><span class="rank">1</span><div class="avatar" style="width:26px;height:26px;font-size:11px">E</div><span class="name">Emma</span><span class="cnt">23 reviews</span></div>
+            <div class="board-row"><span class="rank">2</span><div class="avatar" style="width:26px;height:26px;font-size:11px">J</div><span class="name">James</span><span class="cnt">19 reviews</span></div>
+            <div class="board-row"><span class="rank">3</span><div class="avatar" style="width:26px;height:26px;font-size:11px">L</div><span class="name">Leo</span><span class="cnt">14 reviews</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI AGENTS -->
+<section class="agents" id="agents">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker">AI agents</span>
+      <h2>Your AI Growth Team</h2>
+      <p class="sub">Specialized AI agents help transform customer feedback into visibility, engagement, and long-term growth automatically.</p>
+    </div>
+
+    <div class="agent-row rv">
+      <div class="agent-info">
+        <div class="agent-portrait">
+          <div class="agent-face reply">R</div>
+          <div><b>Reply Agent</b><span>Review response automation</span></div>
+        </div>
+        <p>Analyzes customer reviews and automatically generates professional responses designed to strengthen trust, reinforce local relevance, and keep your business profile consistently active.</p>
+        <p>The agent naturally incorporates your services, locations, and customer sentiment into responses while maintaining an authentic human tone.</p>
+        <div class="agent-result">A stronger online reputation, increased customer trust, and a more active Google Business presence.</div>
+      </div>
+      <div class="agent-mock">
+        <div class="mock-label"><i></i>Google Business · review reply</div>
+        <div class="g-review">
+          <div class="rev-top">
+            <div class="avatar">D</div>
+            <div><b>David R.</b><span>Google · 2 hours ago</span></div>
+          </div>
+          <div class="stars" style="font-size:13px">★★★★★</div>
+          <p class="rev-text">"Best haircut I've had in years. The team really listens to what you want."</p>
+        </div>
+        <div class="ai-reply">
+          Thank you so much, David! We're thrilled you loved your <mark>haircut</mark> — our <mark>downtown team</mark> takes real pride in listening first. We'd love to welcome you back to <mark>the studio</mark> soon!
+          <br><span class="ai-chip"><span class="ai-dot"></span>Generated by Reply Agent · ready to publish</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="agent-row flip rv">
+      <div class="agent-info">
+        <div class="agent-portrait">
+          <div class="agent-face share">S</div>
+          <div><b>Share Agent</b><span>Social content automation</span></div>
+        </div>
+        <p>Transforms customer reviews into ready-to-publish social content automatically. The agent generates captions, quote graphics, testimonial posts, and engagement-focused content tailored for modern social platforms.</p>
+        <p>It helps your business stay consistently visible online without manually creating content every day.</p>
+        <div class="agent-result">More social proof, stronger engagement, and a consistently active online brand presence.</div>
+      </div>
+      <div class="agent-mock">
+        <div class="mock-label"><i></i>Instagram · generated post</div>
+        <div class="insta">
+          <div class="insta-head"><div class="avatar" style="width:28px;height:28px;font-size:12px">Y</div><b>yourbusiness</b></div>
+          <div class="insta-quote">"Best haircut I've had in years. The team really listens."<small>— David R. · ★★★★★ Google review</small></div>
+          <div class="insta-foot"><b>yourbusiness</b> Thank you David! 💙 #localbusiness #fivestars</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="agent-row rv">
+      <div class="agent-info">
+        <div class="agent-portrait">
+          <div class="agent-face geo">G</div>
+          <div><b>GEO Agent</b><span>Search &amp; AI visibility</span></div>
+        </div>
+        <p>Uses customer review language, business information, and local search intent to generate optimized website and blog content designed for both traditional search engines and AI-powered discovery platforms.</p>
+        <p>The agent continuously expands your digital footprint using real customer experiences as visibility signals.</p>
+        <div class="agent-result">Improved local visibility across Google and modern AI search experiences like ChatGPT, Gemini, and Perplexity.</div>
+      </div>
+      <div class="agent-mock">
+        <div class="mock-label"><i></i>AI-generated article · SEO &amp; AI discovery</div>
+        <div class="article">
+          <span class="tag">Blog · auto-generated</span>
+          <h4>What Customers Love About Getting a Haircut in Downtown</h4>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton short"></div>
+          <div class="geo-chips">
+            <span class="geo-chip">Local SEO</span>
+            <span class="geo-chip">Built from review language</span>
+            <span class="geo-chip">AI-search ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLYWHEEL -->
+<section class="flywheel">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker">The system</span>
+      <h2>The Reputation &amp; Visibility Flywheel</h2>
+    </div>
+    <div class="fly-visual rv">
+      <div class="fly-ring"></div>
+      <div class="fly-hub">Youbout<span>runs it for you</span></div>
+      <div class="fly-node" style="top:0;left:50%;transform:translateX(-50%)"><div class="n">1</div><b>Customers leave reviews</b><span>QR codes &amp; automated requests</span></div>
+      <div class="fly-node" style="top:31%;right:0"><div class="n c2">2</div><b>AI responds automatically</b><span>Professional, human-tone replies</span></div>
+      <div class="fly-node" style="bottom:2%;right:8%"><div class="n c3">3</div><b>Reviews become social content</b><span>Posts, captions &amp; quote graphics</span></div>
+      <div class="fly-node" style="bottom:2%;left:8%"><div class="n c4">4</div><b>Visibility grows</b><span>Google &amp; AI search presence</span></div>
+      <div class="fly-node" style="top:31%;left:0"><div class="n c5">5</div><b>More customers discover you</b><span>And the cycle repeats</span></div>
+    </div>
+    <p class="fly-cap rv">Set up the system once. Let it keep building momentum.</p>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker">Outcomes</span>
+      <h2>What Businesses Actually Get</h2>
+    </div>
+    <div class="ben-grid">
+      <div class="ben-card rv"><h3>More Reviews</h3><p>A steady, growing stream of authentic customer reviews, month after month.</p>
+        <div class="ben-vis"><div class="spark"><i style="height:30%"></i><i style="height:42%"></i><i style="height:38%"></i><i style="height:55%"></i><i style="height:64%"></i><i style="height:78%"></i><i style="height:100%"></i></div></div>
+      </div>
+      <div class="ben-card rv"><h3>Better Google Presence</h3><p>An active, optimized profile that helps you climb local rankings.</p>
+        <div class="ben-vis"><div class="rank-vis">
+          <div class="rank-line"><span class="pin">📍</span>Competitor A</div>
+          <div class="rank-line you"><span class="pin">📍</span>Your Business ↑</div>
+          <div class="rank-line"><span class="pin">📍</span>Competitor B</div>
+        </div></div>
+      </div>
+      <div class="ben-card rv"><h3>More Trust</h3><p>High ratings and fresh feedback that make choosing you the easy option.</p>
+        <div class="ben-vis"><div class="stars-vis">★★★★★</div><small>4.8 average · updated daily</small></div>
+      </div>
+      <div class="ben-card rv"><h3>Automated Social Proof</h3><p>Your best reviews, automatically turned into scroll-stopping social posts.</p>
+        <div class="ben-vis"><div class="minipost"><div class="mp-img">"Absolutely wonderful experience!"</div><div class="mp-cap">Auto-generated from a ★★★★★ review</div></div></div>
+      </div>
+      <div class="ben-card rv"><h3>AI Search Visibility</h3><p>Content designed so AI assistants can understand and recommend your business.</p>
+        <div class="ben-vis"><div class="aivis chat">
+          <div class="bubble in">Best salon near downtown?</div>
+          <div class="bubble out">Based on recent reviews, customers recommend…</div>
+        </div></div>
+      </div>
+      <div class="ben-card rv"><h3>Less Manual Work</h3><p>The whole engine runs in the background while you run your business.</p>
+        <div class="ben-vis"><div class="flowvis">
+          <div class="flow-step on"><i>✓</i>Review request sent</div>
+          <div class="flow-step on"><i>✓</i>Reply drafted &amp; published</div>
+          <div class="flow-step"><i>…</i>Social post scheduled</div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker">Getting started</span>
+      <h2>Up and Running in Days</h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-card rv"><div class="how-num">1</div><h3>Connect and configure</h3><p>Link your business profile and review platforms. Setup is guided and takes minutes, not weeks.</p></div>
+      <div class="how-card rv"><div class="how-num">2</div><h3>Start collecting reviews</h3><p>QR codes and automated requests go to work immediately, turning happy customers into public reviews.</p></div>
+      <div class="how-card rv"><div class="how-num">3</div><h3>Let the AI agents take over</h3><p>Replies, social content, and search visibility run on autopilot while you focus on your business.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker">Pricing</span>
+      <h2>Choose the Right Plan</h2>
+      <p class="sub">Every plan includes a <b>30-day free trial</b> — no credit card required.</p>
+    </div>
+    <div class="toggles rv">
+      <div class="toggle" id="cur-toggle">
+        <button data-cur="usd" class="on">USD $</button>
+        <button data-cur="try">TRY ₺</button>
+      </div>
+      <div class="toggle" id="bill-toggle">
+        <button data-bill="month" class="on">Monthly</button>
+        <button data-bill="year">Yearly <span class="save">2 months free</span></button>
+      </div>
+    </div>
+    <div class="price-grid">
+
+      <div class="price-card rv" data-plan="silver">
+        <h3>Silver</h3>
+        <div class="plan-loc" data-loc></div>
+        <div class="price-line"><span class="price-num" data-price></span><span class="price-per" data-per></span></div>
+        <div class="trial-line"><b>Free 30-day trial</b> · no credit card</div>
+        <ul class="plan-feats">
+          <li>Review monitoring in one dashboard</li>
+          <li>Automated review requests</li>
+          <li>Google, Yelp, TripAdvisor &amp; more</li>
+          <li>Google listing management</li>
+          <li>AI website &amp; review widgets</li>
+          <li>Facebook &amp; Instagram automation</li>
+        </ul>
+        <a class="btn btn-ghost" data-cta target="_blank" rel="noopener">Start Free Trial</a>
+      </div>
+
+      <div class="price-card hot rv" data-plan="gold">
+        <span class="hot-badge">Most Popular</span>
+        <h3>Gold</h3>
+        <div class="plan-loc" data-loc></div>
+        <div class="price-line"><span class="price-num" data-price></span><span class="price-per" data-per></span></div>
+        <div class="trial-line"><b>Free 30-day trial</b> · no credit card</div>
+        <ul class="plan-feats">
+          <li>Everything in Silver</li>
+          <li>Expanded review platform coverage</li>
+          <li>Booking, Airbnb, Trustpilot &amp; more</li>
+          <li>AI-generated review responses</li>
+          <li>Automated social proof content</li>
+          <li>Priority support</li>
+        </ul>
+        <a class="btn btn-primary" data-cta target="_blank" rel="noopener">Start Free Trial</a>
+      </div>
+
+      <div class="price-card rv" data-plan="premium">
+        <h3>Premium</h3>
+        <div class="plan-loc" data-loc></div>
+        <div class="price-line"><span class="price-num" data-price></span><span class="price-per" data-per></span></div>
+        <div class="trial-line"><b>Free 30-day trial</b> · no credit card</div>
+        <ul class="plan-feats">
+          <li>Everything in Gold</li>
+          <li>Full review platform coverage (20+)</li>
+          <li>Multi-location management</li>
+          <li>Full AI agent suite</li>
+          <li>Advanced visibility &amp; GEO content</li>
+          <li>Priority support</li>
+        </ul>
+        <a class="btn btn-ghost" data-cta target="_blank" rel="noopener">Start Free Trial</a>
+      </div>
+
+    </div>
+    <p class="price-note rv">Prices exclude applicable taxes. Cancel anytime during your trial.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kicker">Social proof</span>
+      <h2>Trusted by Modern Local Businesses</h2>
+      <p class="sub">Illustrative examples of how local businesses use Youbout. Real customer stories coming soon.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card rv">
+        <span class="sample-badge">Sample</span>
+        <div class="stars">★★★★★</div>
+        <p>"We went from asking customers awkwardly for reviews to having them roll in automatically. The AI replies sound genuinely like us."</p>
+        <div class="testi-who"><div class="avatar">R</div><div><b>Restaurant Owner</b><span>Family restaurant · 2 locations</span></div></div>
+      </div>
+      <div class="testi-card rv">
+        <span class="sample-badge">Sample</span>
+        <div class="stars">★★★★★</div>
+        <p>"Patients now mention they found us through Google and even ChatGPT. Our profile finally works as hard as we do."</p>
+        <div class="testi-who"><div class="avatar">D</div><div><b>Dental Clinic Manager</b><span>Private practice</span></div></div>
+      </div>
+      <div class="testi-card rv">
+        <span class="sample-badge">Sample</span>
+        <div class="stars">★★★★★</div>
+        <p>"The social posts created from our reviews save us hours every week, and our Instagram has never been this consistent."</p>
+        <div class="testi-who"><div class="avatar">S</div><div><b>Salon Owner</b><span>Beauty studio</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <div class="final-panel rv">
+      <h2>Ready to Turn Your Reputation Into a Growth Engine?</h2>
+      <p class="sub">Start collecting more reviews, improving visibility, and building trust with one intelligent platform.</p>
+      <a class="btn btn-big" href="#pricing">Get Started</a>
+      <small>Simple setup. Clear results. Built for modern local businesses.</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-logo"><img src="logo.png" alt="Youbout"></div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <b>Product</b>
+          <a href="#how">How It Works</a>
+          <a href="#agents">AI Agents</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+        <div class="foot-col">
+          <b>Get started</b>
+          <a href="#pricing">Start Free Trial</a>
+          <a href="#pricing">Log in</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Youbout. All rights reserved.</span>
+      <span>Made for local businesses.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ---- pricing data (from Stripe payment links) ----
+const PLANS = {
+  silver: {
+    usd: {month:[49,"https://buy.stripe.com/00w4gybpC4mIa8L3GU4F206"], year:[499,"https://buy.stripe.com/28E3cu79m9H280D0uI4F207"], loc:""},
+    try: {month:[499,"https://buy.stripe.com/5kQ9ASalyaL63KngtG4F20g"], year:[4999,"https://buy.stripe.com/fZu5kCctGcTedkXdhu4F20h"], loc:"Up to 2 locations"}
+  },
+  gold: {
+    usd: {month:[99,"https://buy.stripe.com/7sY8wO79maL6cgT3GU4F208"], year:[999,"https://buy.stripe.com/5kQ14m51e1aw94H0uI4F209"], loc:""},
+    try: {month:[799,"https://buy.stripe.com/cNi3cu65i9H26Wzdhu4F20i"], year:[7999,"https://buy.stripe.com/bJe9AS65i1awcgT5P24F20j"], loc:"Up to 2 locations"}
+  },
+  premium: {
+    usd: {month:[199,"https://buy.stripe.com/6oU28qdxK9H2bcP7Xa4F20a"], year:[1999,"https://buy.stripe.com/14A8wO79m1aw94H1yM4F20b"], loc:""},
+    try: {month:[999,"https://buy.stripe.com/4gMcN4ctG7yU94Ha5i4F20k"], year:[9999,"https://buy.stripe.com/00wdR81P29H2bcPa5i4F20l"], loc:"Up to 5 locations"}
+  }
+};
+let cur = "usd", bill = "month";
+function fmt(n, c){
+  return c === "usd" ? "$" + n.toLocaleString("en-US") : "₺" + n.toLocaleString("tr-TR");
+}
+function renderPrices(){
+  document.querySelectorAll(".price-card").forEach(card => {
+    const p = PLANS[card.dataset.plan][cur][bill];
+    card.querySelector("[data-price]").textContent = fmt(p[0], cur);
+    card.querySelector("[data-per]").textContent = bill === "month" ? "/ month" : "/ year";
+    card.querySelector("[data-cta]").href = p[1];
+    card.querySelector("[data-loc]").textContent = PLANS[card.dataset.plan][cur].loc;
+  });
+}
+document.querySelectorAll("#cur-toggle button").forEach(b => b.addEventListener("click", () => {
+  cur = b.dataset.cur;
+  document.querySelectorAll("#cur-toggle button").forEach(x => x.classList.toggle("on", x === b));
+  renderPrices();
+}));
+document.querySelectorAll("#bill-toggle button").forEach(b => b.addEventListener("click", () => {
+  bill = b.dataset.bill;
+  document.querySelectorAll("#bill-toggle button").forEach(x => x.classList.toggle("on", x === b));
+  renderPrices();
+}));
+renderPrices();
+
+// ---- navbar scroll state ----
+const nav = document.getElementById("nav");
+addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 10), {passive:true});
+
+// ---- reveal on scroll ----
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+}, {threshold:.12});
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+</script>
 </body>
 </html>
