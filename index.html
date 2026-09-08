@@ -180,6 +180,24 @@ nav.scrolled{border-bottom-color:var(--line);box-shadow:0 2px 20px rgba(22,24,29
 .board-row .name{font-size:13px;font-weight:600;flex:1}
 .board-row .cnt{font-size:12px;color:var(--gray);white-space:nowrap}
 .board-row.top{background:var(--primary-soft);border-color:#BBD4FA}
+/* branded review page (wide feature card) */
+.feat-card.wide{grid-column:1/-1;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:36px}
+.feat-card.wide h3{font-size:22px}
+.feat-card.wide>p{font-size:15.5px}
+.wide-points{list-style:none;display:grid;gap:9px;margin-top:6px;font-size:14px;color:var(--ink-2)}
+.wide-points li{display:flex;gap:9px;align-items:flex-start}
+.wide-points li::before{content:"✓";color:var(--green);font-weight:800;flex-shrink:0}
+.brand-page{max-width:330px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow-md);text-align:center}
+.bp-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px}
+.bp-logo .avatar{width:38px;height:38px;font-size:16px}
+.bp-logo b{font-size:15px}
+.bp-video{position:relative;border-radius:12px;background:linear-gradient(135deg,var(--ink-2),var(--ink));height:120px;display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+.bp-play{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center}
+.bp-play::before{content:"";display:block;border-style:solid;border-width:9px 0 9px 15px;border-color:transparent transparent transparent var(--primary);margin-left:4px}
+.bp-video-cap{font-size:11px;color:var(--gray-light);margin-bottom:12px}
+.bp-stars{font-size:26px;color:var(--star);letter-spacing:6px;margin-bottom:12px}
+.bp-btn{display:block;background:var(--primary);color:#fff;font-size:13.5px;font-weight:600;border-radius:var(--radius);padding:11px;margin-bottom:8px}
+.bp-note{font-size:10.5px;color:var(--gray-light)}
 
 /* ===== AGENTS ===== */
 .agents{background:#fff}
@@ -330,6 +348,7 @@ footer{background:#0E1013;color:#fff;padding:64px 0 40px}
 /* ===== RESPONSIVE ===== */
 @media(max-width:960px){
   .nav-links{display:none}
+  .feat-card.wide{grid-template-columns:1fr;gap:28px}
   .hero-grid{grid-template-columns:1fr}
   .hero-visual{min-height:430px;margin-top:20px}
   .agent-row{grid-template-columns:1fr;gap:28px}
@@ -356,7 +375,7 @@ footer{background:#0E1013;color:#fff;padding:64px 0 40px}
       <a href="#pricing">Pricing</a>
     </div>
     <div class="nav-cta">
-      <a class="btn btn-ghost" href="#pricing">Log in</a>
+      <a class="btn btn-ghost" href="https://app.youbout.com">Log in</a>
       <a class="btn btn-primary" href="#pricing">Get Started</a>
     </div>
   </div>
@@ -438,6 +457,25 @@ footer{background:#0E1013;color:#fff;padding:64px 0 40px}
       <p class="sub">Customers can leave public reviews or share private feedback, so you grow your reputation while understanding every customer experience.</p>
     </div>
     <div class="collect-grid">
+      <div class="feat-card wide rv">
+        <div>
+          <h3>Your Branded Review Page</h3>
+          <p>One link that looks and feels like your business — not like software. Customers land on a page with your logo, your colors, and even a personal video message from you, then leave their review in seconds.</p>
+          <ul class="wide-points">
+            <li>Your logo and brand colors, front and center</li>
+            <li>Optional personal video message from the owner</li>
+            <li>One tap to Google, Yelp, TripAdvisor and more</li>
+          </ul>
+        </div>
+        <div class="brand-page">
+          <div class="bp-logo"><div class="avatar">J</div><b>Joe's Coffee House</b></div>
+          <div class="bp-video"><div class="bp-play"></div></div>
+          <div class="bp-video-cap">A personal message from Joe</div>
+          <div class="bp-stars">★★★★★</div>
+          <span class="bp-btn">Leave us a review</span>
+          <div class="bp-note">Takes about 30 seconds</div>
+        </div>
+      </div>
       <div class="feat-card rv">
         <h3>QR Codes</h3>
         <p>Customers scan and leave feedback instantly, right from the table, counter, or receipt.</p>
@@ -767,7 +805,7 @@ footer{background:#0E1013;color:#fff;padding:64px 0 40px}
         <div class="foot-col">
           <b>Get started</b>
           <a href="#pricing">Start Free Trial</a>
-          <a href="#pricing">Log in</a>
+          <a href="https://app.youbout.com">Log in</a>
         </div>
       </div>
     </div>

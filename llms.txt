@@ -4,6 +4,7 @@
 
 ## What Youbout does
 
+- **Branded review page**: every business gets its own review page with its logo, brand colors, and an optional personal video message from the owner, linking customers to Google, Yelp, TripAdvisor, and more in one tap.
 - **Review collection**: QR codes at the counter or on receipts, plus automated review requests via SMS, email, and WhatsApp. Customers can leave public reviews or share private feedback.
 - **Reply Agent (AI)**: analyzes incoming reviews and automatically generates professional responses in the business's own tone, incorporating services, locations, and customer sentiment. Keeps the Google Business profile consistently active.
 - **Share Agent (AI)**: turns customer reviews into ready-to-publish social content — captions, quote graphics, and testimonial posts for Facebook and Instagram.
