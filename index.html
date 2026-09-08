@@ -98,8 +98,17 @@ nav.scrolled{border-bottom-color:var(--line);box-shadow:0 2px 20px rgba(22,24,29
 .btn-ghost:hover{border-color:var(--primary);color:var(--primary-deep)}
 .btn-big{font-size:17px;padding:15px 34px}
 
+/* ===== HERO VIDEO ===== */
+.hero-video-wrap{padding:110px 0 0;background:linear-gradient(180deg,var(--primary-fade) 0%,#fff 100%)}
+.hero-video{position:relative;width:100%;aspect-ratio:16/9;border-radius:calc(var(--radius) + 8px);overflow:hidden;background:#0E1013;box-shadow:var(--shadow-lg);border:1px solid var(--line)}
+.hero-video video{width:100%;height:100%;object-fit:cover;display:block}
+.hero-video .placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;background:linear-gradient(135deg,#154CB0,#2878F0)}
+.hero-video .placeholder .play{width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center}
+.hero-video .placeholder .play::before{content:"";display:block;border-style:solid;border-width:15px 0 15px 25px;border-color:transparent transparent transparent var(--primary);margin-left:6px}
+.hero-video .placeholder span{font-size:15px;font-weight:600;letter-spacing:.02em;opacity:.9}
+
 /* ===== HERO ===== */
-.hero{padding:170px 0 100px;background:linear-gradient(180deg,var(--primary-fade) 0%,#fff 85%);position:relative}
+.hero{padding:70px 0 100px;background:#fff;position:relative}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .hero h1{font-size:clamp(36px,5vw,58px);font-weight:800}
 .hero h1 em{font-style:normal;color:var(--primary);position:relative}
@@ -381,8 +390,24 @@ footer{background:#0E1013;color:#fff;padding:64px 0 40px}
   </div>
 </nav>
 
+<!-- HERO VIDEO -->
+<section class="hero-video-wrap" id="top">
+  <div class="wrap">
+    <div class="hero-video">
+      <!-- R2 VIDEO: paste your 16:9 URL into src below and delete the placeholder div -->
+      <video controls playsinline preload="metadata" poster="og-image.png">
+        <source src="" type="video/mp4">
+      </video>
+      <div class="placeholder">
+        <div class="play"></div>
+        <span>Video coming here</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- HERO -->
-<header class="hero" id="top">
+<header class="hero">
   <div class="wrap hero-grid">
     <div>
       <span class="kicker">AI-powered growth for local businesses</span>

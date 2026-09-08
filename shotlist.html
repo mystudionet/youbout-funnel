@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Youbout — "You 'bout what?" — Director's Shotlist</title>
+<style>
+  :root {
+    --bg: #0e0e10;
+    --panel: #17171a;
+    --panel-2: #1d1d21;
+    --border: #2a2a30;
+    --text: #e8e8ea;
+    --text-dim: #9a9aa2;
+    --accent: #2878F0;
+    --done: #4ade80;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    line-height: 1.5;
+    padding: 32px 24px 80px;
+  }
+  .container { max-width: 980px; margin: 0 auto; }
+  h1 { font-size: 28px; font-weight: 600; margin: 0 0 4px; letter-spacing: -0.02em; }
+  .subtitle { color: var(--text-dim); font-size: 14px; margin-bottom: 32px; }
+  .howto {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+    padding: 14px 18px; font-size: 13px; color: var(--text-dim); margin-bottom: 16px;
+  }
+  .duration-banner {
+    background: linear-gradient(135deg, #F05028, #E07B22);
+    color: #fff; border-radius: 10px; padding: 18px 22px; margin-bottom: 28px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .duration-banner .big {
+    font-size: 34px; font-weight: 800; letter-spacing: -0.01em; white-space: nowrap;
+  }
+  .duration-banner .txt { font-size: 15px; font-weight: 600; line-height: 1.35; }
+  details.style-prefix {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+    padding: 14px 18px; margin-bottom: 32px;
+  }
+  details.style-prefix summary { cursor: pointer; font-weight: 600; color: var(--accent); user-select: none; }
+  details.style-prefix pre {
+    margin: 14px 0 0; padding: 14px; background: var(--panel-2); border-radius: 6px;
+    font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 12.5px;
+    white-space: pre-wrap; color: var(--text);
+  }
+  .scene {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
+    padding: 20px 22px; margin-bottom: 18px;
+  }
+  .scene-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+  .scene-header input[type="checkbox"] {
+    width: 20px; height: 20px; margin-top: 2px; accent-color: var(--done); cursor: pointer; flex-shrink: 0;
+  }
+  .scene-num { font-size: 18px; font-weight: 700; color: var(--accent); min-width: 56px; }
+  .scene-desc { font-size: 15px; color: var(--text); flex: 1; }
+  .scene.done .scene-desc { text-decoration: line-through; color: var(--text-dim); }
+  .prompt-block {
+    background: var(--panel-2); border: 1px solid var(--border); border-radius: 6px;
+    margin-top: 12px; overflow: hidden;
+  }
+  .prompt-label {
+    display: flex; justify-content: space-between; align-items: center; padding: 8px 14px;
+    background: rgba(255,255,255,0.02); border-bottom: 1px solid var(--border);
+    font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .dur-tag {
+    display: inline-block; background: #F05028; color: #fff; font-weight: 800;
+    font-size: 17px; letter-spacing: 0; padding: 4px 14px; border-radius: 6px;
+    text-transform: none; margin-left: 10px;
+  }
+  .prompt-label .left { font-size: 13px; font-weight: 700; color: var(--text); }
+  .copy-btn {
+    background: transparent; color: var(--accent); border: 1px solid var(--border); border-radius: 4px;
+    padding: 4px 10px; font-size: 11px; cursor: pointer; text-transform: uppercase;
+    letter-spacing: 0.05em; font-family: inherit;
+  }
+  .copy-btn:hover { border-color: var(--accent); }
+  .copy-btn.copied { color: var(--done); border-color: var(--done); }
+  pre.prompt {
+    margin: 0; padding: 14px 16px; font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12.5px; white-space: pre-wrap; color: var(--text);
+  }
+  .note {
+    font-size: 12.5px; color: var(--text-dim); margin-top: 10px; padding: 10px 12px;
+    border-left: 2px solid var(--accent); background: rgba(40,120,240,0.05);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Youbout — "You 'bout what?"</h1>
+  <div class="subtitle">30-second buddy ad · Marco &amp; Denny · Director's Shotlist · Seedance 2.0 · 10-second clips</div>
+
+  <div class="duration-banner">
+    <span class="big">⏱ 10 SECONDS</span>
+    <span class="txt">EVERY CLIP IS 10 SECONDS.<br>Set the Seedance duration to <b>10s</b> before you hit generate — not 15.</span>
+  </div>
+
+  <div class="howto">
+    Tick scenes as you shoot them — progress saves automatically in your browser.
+    Click Copy on any prompt to grab the full text (Style Prefix + Characters + Scene + Cuts) ready to paste into Seedance 2.0.
+    Each clip is built for a 10-second generation. Attach your MARCO and DENNY character sheets as reference images on every generation so faces and wardrobe stay locked.
+    Want changes? Tell Claude what to revise and this file updates.
+  </div>
+
+  <details class="style-prefix">
+    <summary>Global Style Prefix (applied to every prompt)</summary>
+    <pre>Style: 8K photorealistic commercial cinematography — no 3D render, no game engine.
+Lighting: Bright natural daylight from large cafe windows, warm and inviting, soft window rim light, airy and clean — not moody.
+Color: Warm cafe palette (wood browns, cream walls) with small pops of the Youbout brand colors — blue, red, yellow, green. 60:30:10 dominant/secondary/accent.
+Camera: Physical cine lens, shallow depth of field, 180° shutter motion blur, subtle handheld life.
+Skin: Pore-level realism — vellus hair, natural texture, catch-lights in living eyes, chest rise from breathing.
+Acting: Hollywood sitcom timing — deadpan comedic beats, micro-pauses before reactions, precise eye-line. Characters always reacting, never static.
+Physics: Gravity and inertia respected — correct contact shadows, no floating props.
+Composition: Rule of thirds, clean commercial framing.
+Continuity: MARCO and DENNY identical across every cut — same faces, hair, wardrobe; the cafe unchanged. No identity drift.
+Technical: 24fps smooth motion, 8K detail, no jitter.
+Audio: Natural spoken English dialogue with accurate lip-sync; light cafe ambience (espresso machine hiss, low murmur); no music bed; no subtitles.</pre>
+  </details>
+
+  <!-- SCENE 1 -->
+  <div class="scene">
+    <div class="scene-header">
+      <input type="checkbox" data-scene="1">
+      <div class="scene-num">1.</div>
+      <div class="scene-desc">Marco moans about zero reviews; Denny plants the seed — "You need Youbout." — "me about what?"</div>
+    </div>
+    <div class="prompt-block">
+      <div class="prompt-label"><span class="left">Prompt 1</span><span class="dur-tag">⏱ 10 SECONDS</span><button class="copy-btn">Copy</button></div>
+      <pre class="prompt">Style: 8K photorealistic commercial cinematography — no 3D render, no game engine.
+Lighting: Bright natural daylight from large cafe windows, warm and inviting, soft window rim light, airy and clean — not moody.
+Color: Warm cafe palette (wood browns, cream walls) with small pops of the Youbout brand colors — blue, red, yellow, green. 60:30:10 dominant/secondary/accent.
+Camera: Physical cine lens, shallow depth of field, 180° shutter motion blur, subtle handheld life.
+Skin: Pore-level realism — vellus hair, natural texture, catch-lights in living eyes, chest rise from breathing.
+Acting: Hollywood sitcom timing — deadpan comedic beats, micro-pauses before reactions, precise eye-line. Characters always reacting, never static.
+Physics: Gravity and inertia respected — correct contact shadows, no floating props.
+Composition: Rule of thirds, clean commercial framing.
+Continuity: MARCO and DENNY identical across every cut — same faces, hair, wardrobe; the cafe unchanged. No identity drift.
+Technical: 24fps smooth motion, 8K detail, no jitter.
+Audio: Natural spoken English dialogue with accurate lip-sync; light cafe ambience (espresso machine hiss, low murmur); no music bed; no subtitles.
+
+Characters:
+MARCO — warm, tired but likable 45-year-old Italian-American cafe owner, slightly overweight, round friendly face, short dark hair greying at the temples, light stubble, expressive brown eyes. Canvas barista apron over a plain olive t-shirt.
+DENNY — relaxed 42-year-old know-it-all, lean build, short neat fashionable haircut, well-groomed short beard, confident amused half-smile. Smart-casual button shirt with sleeves rolled up, a coffee cup in hand.
+
+Scene:
+Marco's cozy daytime cafe. Marco stands behind the wooden counter, phone in hand. Denny sits on a bar stool on the customer side, coffee in front of him, about four feet away.
+
+CUT 1 — Medium two-shot, 35mm, eye-level, subtle handheld:
+Marco stares at his phone, shoulders sinking, and exhales. Flat and defeated: "Three months. Not one review. Nobody leaves reviews anymore." Without looking up, Denny lifts his cup and deadpans: "You need Youbout."
+
+CUT 2 — Close on Marco, 85mm, static:
+Marco frowns, a micro-pause, head tilting toward Denny, genuinely lost: "I need… me about what?"</pre>
+      <div class="note">Edgy alt (YouTube / site only, not ad networks): first line becomes "Three months. Not ONE f***ing review." Shoot a clean version too for Meta/Google.</div>
+    </div>
+  </div>
+
+  <!-- SCENE 2 -->
+  <div class="scene">
+    <div class="scene-header">
+      <input type="checkbox" data-scene="2">
+      <div class="scene-num">2.</div>
+      <div class="scene-desc">The wordplay — "Not you, moron. YOUBOUT dot com." — "What about it?" Denny turns the phone.</div>
+    </div>
+    <div class="prompt-block">
+      <div class="prompt-label"><span class="left">Prompt 2</span><span class="dur-tag">⏱ 10 SECONDS</span><button class="copy-btn">Copy</button></div>
+      <pre class="prompt">Style: 8K photorealistic commercial cinematography — no 3D render, no game engine.
+Lighting: Bright natural daylight from large cafe windows, warm and inviting, soft window rim light, airy and clean — not moody.
+Color: Warm cafe palette (wood browns, cream walls) with small pops of the Youbout brand colors — blue, red, yellow, green. 60:30:10 dominant/secondary/accent.
+Camera: Physical cine lens, shallow depth of field, 180° shutter motion blur, subtle handheld life.
+Skin: Pore-level realism — vellus hair, natural texture, catch-lights in living eyes, chest rise from breathing.
+Acting: Hollywood sitcom timing — deadpan comedic beats, micro-pauses before reactions, precise eye-line. Characters always reacting, never static.
+Physics: Gravity and inertia respected — correct contact shadows, no floating props.
+Composition: Rule of thirds, clean commercial framing.
+Continuity: MARCO and DENNY identical across every cut — same faces, hair, wardrobe; the cafe unchanged. No identity drift.
+Technical: 24fps smooth motion, 8K detail, no jitter.
+Audio: Natural spoken English dialogue with accurate lip-sync; light cafe ambience (espresso machine hiss, low murmur); no music bed; no subtitles.
+
+Characters:
+MARCO — 45, cafe owner, round friendly face, short greying dark hair, light stubble, canvas apron over olive t-shirt, standing behind the counter, still confused.
+DENNY — 42, lean, neat haircut, short beard, half-smile, button shirt with rolled sleeves, on the bar stool, smartphone now in hand.
+
+Scene:
+Same cafe, continuous. Marco behind the counter facing Denny, four feet between them.
+
+CUT 1 — Medium on Denny, 50mm, slight low angle:
+Denny sets his cup down with a soft clink and looks up with a patient, amused half-smile, teasing: "Not you, moron. YOUBOUT. Youbout dot com." Marco, in the edge of frame, gives a small helpless shrug: "What about it?"
+
+CUT 2 — Two-shot, 35mm, gentle handheld:
+Denny leans forward and rotates his smartphone to face Marco, screen glowing toward him. Marco leans in a couple of inches, eyes narrowing at the screen.</pre>
+    </div>
+  </div>
+
+  <!-- SCENE 3 -->
+  <div class="scene">
+    <div class="scene-header">
+      <input type="checkbox" data-scene="3">
+      <div class="scene-num">3.</div>
+      <div class="scene-desc">Denny's two-line pitch, then the "do nothing" punchline.</div>
+    </div>
+    <div class="prompt-block">
+      <div class="prompt-label"><span class="left">Prompt 3a</span><span class="dur-tag">⏱ 10 SECONDS</span><button class="copy-btn">Copy</button></div>
+      <pre class="prompt">Style: 8K photorealistic commercial cinematography — no 3D render, no game engine.
+Lighting: Bright natural daylight from large cafe windows, warm and inviting, soft window rim light, airy and clean — not moody.
+Color: Warm cafe palette (wood browns, cream walls) with small pops of the Youbout brand colors — blue, red, yellow, green. 60:30:10 dominant/secondary/accent.
+Camera: Physical cine lens, shallow depth of field, 180° shutter motion blur, subtle handheld life.
+Skin: Pore-level realism — vellus hair, natural texture, catch-lights in living eyes, chest rise from breathing.
+Acting: Hollywood sitcom timing — deadpan comedic beats, micro-pauses before reactions, precise eye-line. Characters always reacting, never static.
+Physics: Gravity and inertia respected — correct contact shadows, no floating props.
+Composition: Rule of thirds, clean commercial framing.
+Continuity: MARCO and DENNY identical across every cut — same faces, hair, wardrobe; the cafe unchanged. No identity drift.
+Technical: 24fps smooth motion, 8K detail, no jitter.
+Audio: Natural spoken English dialogue with accurate lip-sync; light cafe ambience (espresso machine hiss, low murmur); no music bed; no subtitles.
+
+Characters:
+DENNY — 42, lean, neat haircut, short beard, confident half-smile, rolled-sleeve button shirt, holding his smartphone up toward Marco.
+MARCO — 45, cafe owner, apron over olive t-shirt, leaning in over the counter, starting to pay real attention.
+
+Scene:
+Same cafe, continuous. Denny holds the phone between them; Marco leans in. A small branded QR stand sits on the counter beside them.
+
+CUT 1 — Over-Marco's-shoulder onto Denny, 50mm:
+Denny taps the screen, relaxed and confident, selling it easily: "It asks for the reviews for you. QR on the counter, automatic texts." Marco's eyebrows lift a fraction — the first spark of interest.
+
+CUT 2 — Medium on Denny, 50mm, small push-in:
+Denny lifts a finger for the kicker, half-smile widening: "And when reviews come in, the AI replies. In your tone. Instantly."</pre>
+    </div>
+    <div class="prompt-block">
+      <div class="prompt-label"><span class="left">Prompt 3b</span><span class="dur-tag">⏱ 10 SECONDS</span><button class="copy-btn">Copy</button></div>
+      <pre class="prompt">Style: 8K photorealistic commercial cinematography — no 3D render, no game engine.
+Lighting: Bright natural daylight from large cafe windows, warm and inviting, soft window rim light, airy and clean — not moody.
+Color: Warm cafe palette (wood browns, cream walls) with small pops of the Youbout brand colors — blue, red, yellow, green. 60:30:10 dominant/secondary/accent.
+Camera: Physical cine lens, shallow depth of field, 180° shutter motion blur, subtle handheld life.
+Skin: Pore-level realism — vellus hair, natural texture, catch-lights in living eyes, chest rise from breathing.
+Acting: Hollywood sitcom timing — deadpan comedic beats, micro-pauses before reactions, precise eye-line. Characters always reacting, never static.
+Physics: Gravity and inertia respected — correct contact shadows, no floating props.
+Composition: Rule of thirds, clean commercial framing.
+Continuity: MARCO and DENNY identical across every cut — same faces, hair, wardrobe; the cafe unchanged. No identity drift.
+Technical: 24fps smooth motion, 8K detail, no jitter.
+Audio: Natural spoken English dialogue with accurate lip-sync; light cafe ambience (espresso machine hiss, low murmur); no music bed; no subtitles.
+
+Characters:
+MARCO — 45, cafe owner, apron over olive t-shirt, straightening up behind the counter as realization dawns, a grin building.
+DENNY — 42, lean, neat haircut, short beard, back on his stool, coffee cup in hand, deadpan.
+
+Scene:
+Same cafe, continuous. The pitch has landed. This is the punchline beat — let it breathe.
+
+CUT 1 — Slow push-in on Marco, 85mm, eye-level:
+Marco straightens, the idea sinking in, a real micro-pause, almost hopeful: "…so I do nothing?" Off his look, Denny takes an unhurried sip and deadpans: "You do nothing."
+
+CUT 2 — Medium on Marco, 50mm, locked off:
+Marco breaks into a wide, satisfied grin and spreads both hands proudly over his counter: "I'm GREAT at doing nothing." He holds the grin; a beat of silence.</pre>
+    </div>
+  </div>
+
+  <!-- SCENE 4 -->
+  <div class="scene">
+    <div class="scene-header">
+      <input type="checkbox" data-scene="4">
+      <div class="scene-num">4.</div>
+      <div class="scene-desc">End card — branded QR stand on the counter; logo, VO and trial line added in edit.</div>
+    </div>
+    <div class="prompt-block">
+      <div class="prompt-label"><span class="left">Prompt 4 · product beat</span><span class="dur-tag">⏱ 10 SECONDS</span><button class="copy-btn">Copy</button></div>
+      <pre class="prompt">Style: 8K photorealistic commercial cinematography — no 3D render, no game engine.
+Lighting: Bright natural daylight from large cafe windows, warm and inviting, soft window rim light, airy and clean — not moody.
+Color: Warm cafe palette (wood browns, cream walls) with small pops of the Youbout brand colors — blue, red, yellow, green. 60:30:10 dominant/secondary/accent.
+Camera: Physical cine lens, shallow depth of field, 180° shutter motion blur, subtle handheld life.
+Skin: Pore-level realism — vellus hair, natural texture, catch-lights in living eyes, chest rise from breathing.
+Acting: Hollywood sitcom timing — deadpan comedic beats, micro-pauses before reactions, precise eye-line. Characters always reacting, never static.
+Physics: Gravity and inertia respected — correct contact shadows, no floating props.
+Composition: Rule of thirds, clean commercial framing.
+Continuity: MARCO and DENNY identical across every cut — same faces, hair, wardrobe; the cafe unchanged. No identity drift.
+Technical: 24fps smooth motion, 8K detail, no jitter.
+Audio: Natural spoken English dialogue with accurate lip-sync; light cafe ambience (espresso machine hiss, low murmur); no music bed; no subtitles.
+
+Characters:
+MARCO and DENNY — soft, out-of-focus in the deep background of the cafe, Marco behind the counter still grinning, Denny on his stool. Not the subject of this shot.
+
+Scene:
+Same cafe. A clean, small branded QR review stand sits on the wooden counter in the foreground, catching warm window light. Marco and Denny are blurred behind it.
+
+CUT 1 — Macro rack-focus, 100mm:
+Start soft on the blurred pair in the background, then rack focus forward to the crisp branded QR stand on the counter. Gentle dust motes drift in the window light. Hold on the sharp product beat, clean negative space above it for a logo and text overlay.</pre>
+      <div class="note">In edit (After Effects / Premiere): fade to a white card with the YOUBOUT logo, VO "Youbout. What they say about you… is your business.", and "30-day free trial · no credit card · youbout.com". Add the music bed here. Export 16:9 for site/YouTube and a 9:16 crop for Reels/TikTok/Shorts.</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.querySelectorAll('.scene input[type="checkbox"]').forEach(cb => {
+    const key = 'shotlist-scene-' + cb.dataset.scene + '-done';
+    if (localStorage.getItem(key) === '1') {
+      cb.checked = true;
+      cb.closest('.scene').classList.add('done');
+    }
+    cb.addEventListener('change', () => {
+      localStorage.setItem(key, cb.checked ? '1' : '0');
+      cb.closest('.scene').classList.toggle('done', cb.checked);
+    });
+  });
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const pre = btn.closest('.prompt-block').querySelector('pre.prompt');
+      navigator.clipboard.writeText(pre.textContent).then(() => {
+        btn.classList.add('copied');
+        const original = btn.textContent;
+        btn.textContent = 'Copied';
+        setTimeout(() => { btn.classList.remove('copied'); btn.textContent = original; }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>
