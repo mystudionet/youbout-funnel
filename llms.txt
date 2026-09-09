@@ -12,6 +12,21 @@
 - **Team-based collection**: leaderboards that help staff generate reviews consistently.
 - **Listings and widgets**: Google listing management, AI website, and embeddable review widgets.
 
+## The AI agents
+
+Youbout's automation is delivered by three named AI agents, each with a dedicated page:
+
+- **Rio — Review Reply Agent** (https://youbout.com/ai-agent-rio): replies to every review instantly, in the business's own tone, on Google, Yelp, TripAdvisor, Facebook and more. Included in Gold and Premium plans.
+- **Sunny — Social Media Agent** (https://youbout.com/ai-agent-sunny): turns five-star reviews into ready-to-publish social posts, captions, and quote graphics for Facebook and Instagram. Included in Gold and Premium plans.
+- **Geo — Search & AI Visibility Agent** (https://youbout.com/ai-agent-geo): builds local content from real review language so businesses get found on Google and recommended by ChatGPT, Gemini, and Perplexity. Included in the Premium plan.
+
+## Site pages
+
+- Home: https://youbout.com/
+- Pricing & feature comparison: https://youbout.com/pricing.html
+- Use cases by industry: https://youbout.com/use-cases.html (restaurants, dental, beauty, gyms, home services, retail — each with its own page and FAQ)
+- Resources: https://youbout.com/resources.html
+
 ## Who it is for
 
 Local businesses: restaurants, dentists, beauty salons, gyms, coffee shops, boutiques, clinics, home services, and other customer-facing businesses with one or more locations.
@@ -20,9 +35,9 @@ Local businesses: restaurants, dentists, beauty salons, gyms, coffee shops, bout
 
 Three self-serve plans, each with a 30-day free trial and no credit card required:
 
-- **Silver** — $49/month or $499/year (₺499/month or ₺4.999/year): review monitoring, automated requests, core review platforms, Google listing management, AI website and widgets, Facebook and Instagram automation.
-- **Gold** — $99/month or $999/year (₺799/month or ₺7.999/year): everything in Silver plus expanded review platform coverage and AI-generated review responses. Most popular plan.
-- **Premium** — $199/month or $1.999/year (₺999/month or ₺9.999/year): everything in Gold plus full review platform coverage (20+ platforms), multi-location management, and the full AI agent suite.
+- **Silver** — $49/month or $499/year: review monitoring, automated requests, core review platforms, Google listing management, AI website and widgets, Facebook and Instagram automation.
+- **Gold** — $99/month or $999/year: everything in Silver plus expanded review platform coverage and AI-generated review responses. Most popular plan.
+- **Premium** — $199/month or $1.999/year: everything in Gold plus full review platform coverage (20+ platforms), multi-location management, and the full AI agent suite.
 
 Checkout is handled by Stripe. Sign up at https://youbout.com/#pricing
 
