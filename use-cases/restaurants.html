@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Restaurants & Cafés — Youbout Use Case</title>
+<title>Restaurants & Cafés | Youbout Use Case</title>
 <meta name="description" content="Diners pick where to eat by comparing ratings, photos, and recent reviews. Youbout turns every great meal into a public review and keeps your profiles acti">
 <link rel="canonical" href="https://youbout.com/use-cases/restaurants.html">
 <link rel="icon" type="image/png" href="../favicon.png">
-<meta property="og:title" content="Restaurants & Cafés — Youbout Use Case">
+<meta property="og:title" content="Restaurants & Cafés | Youbout Use Case">
 <meta property="og:description" content="Diners pick where to eat by comparing ratings, photos, and recent reviews. Youbout turns every great meal into a public review and keeps your profiles acti">
 <meta property="og:image" content="https://youbout.com/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <style>
-.uc-hero{padding:150px 0 60px;background:linear-gradient(180deg,var(--primary-fade),#fff)}
+.uc-hero{padding:24px 0 60px;background:linear-gradient(180deg,var(--primary-fade),#fff)}
 .uc-hero .icon{font-size:44px;margin-bottom:12px}
 .uc-hero h1{font-size:clamp(30px,4.4vw,48px);font-weight:800;max-width:760px}
 .uc-hero .sub{max-width:700px}
@@ -46,7 +46,44 @@
 .pagevideo-inner .placeholder .play{width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center}
 .pagevideo-inner .placeholder .play::before{content:"";display:block;border-style:solid;border-width:15px 0 15px 25px;border-color:transparent transparent transparent var(--primary);margin-left:6px}
 .pagevideo-inner .placeholder span{font-size:15px;font-weight:600;letter-spacing:.02em;opacity:.9}
-@media(max-width:760px){.pain-grid{grid-template-columns:1fr}}
+/* listen bar */
+.listen-bar{background:var(--primary-soft);border-bottom:1px solid var(--line);padding:12px 0;margin-top:108px}
+.listen-inner{display:flex;align-items:center;gap:14px;max-width:1140px;margin:0 auto;padding:0 24px}
+.listen-btn{width:38px;height:38px;border-radius:50%;background:var(--primary);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;transition:background .2s,transform .15s}
+.listen-btn:hover{background:var(--primary-deep);transform:scale(1.07)}
+.listen-meta{flex:1;display:flex;flex-direction:column;gap:5px}
+.listen-label{font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--primary-deep)}
+.listen-dur{color:#F05028;margin-left:4px}
+.listen-progress-wrap{display:flex;align-items:center;gap:10px}
+.listen-progress-bg{flex:1;height:4px;background:rgba(40,120,240,.2);border-radius:4px;overflow:hidden;cursor:pointer}
+.listen-progress-fill{height:100%;width:0%;background:var(--primary);border-radius:4px;transition:width .3s linear}
+.listen-time{font-size:11.5px;color:var(--gray);font-weight:600;min-width:34px;text-align:right}
+/* image placeholder (temporary, replaced by real img) */
+.img-ph{position:relative;border-radius:calc(var(--radius) + 8px);overflow:hidden;border:2px dashed var(--primary);background:repeating-linear-gradient(45deg,var(--primary-fade),var(--primary-fade) 14px,#fff 14px,#fff 28px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:22px;color:var(--primary-deep)}
+.img-ph b{font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.img-ph span{font-size:12.5px;color:var(--gray);max-width:420px}
+.img-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.uc-scene{max-width:860px;margin:48px auto 0;aspect-ratio:16/9}
+/* video popup thumbnail (always horizontal 16:9, opens lightbox) */
+.vthumb{position:relative;display:block;width:100%;aspect-ratio:16/9;border:none;padding:0;cursor:pointer;border-radius:calc(var(--radius) + 8px);overflow:hidden;background:#0E1013;box-shadow:var(--shadow-lg)}
+.vthumb .vposter{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vthumb .vplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;transition:transform .15s,background .2s;z-index:2}
+.vthumb:hover .vplay{transform:translate(-50%,-50%) scale(1.08)}
+.vthumb .vplay::before{content:"";display:block;border-style:solid;border-width:14px 0 14px 23px;border-color:transparent transparent transparent var(--primary);margin-left:6px}
+.vthumb .vtag{position:absolute;left:14px;bottom:14px;z-index:2;background:rgba(8,10,14,.72);color:#fff;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:5px 11px;border-radius:20px}
+/* video lightbox */
+.vmodal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:24px}
+.vmodal.open{display:flex}
+.vmodal-backdrop{position:absolute;inset:0;background:rgba(8,10,14,.85);backdrop-filter:blur(4px)}
+.vmodal-inner{position:relative;z-index:1;width:100%;max-width:960px;aspect-ratio:16/9}
+.vmodal.portrait .vmodal-inner{max-width:min(420px,92vw);aspect-ratio:9/16;max-height:86vh}
+.vmodal-frame{position:absolute;inset:0;border-radius:14px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center}
+.vmodal-frame iframe,.vmodal-frame video{position:absolute;inset:0;width:100%;height:100%;border:none}
+.vmodal-frame .vph{color:#fff;text-align:center;padding:22px;font-size:14px;opacity:.85;display:flex;flex-direction:column;gap:8px}
+.vmodal-frame .vph b{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--primary)}
+.vmodal-close{position:absolute;top:-46px;right:0;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;z-index:2}
+.vmodal-close:hover{background:rgba(255,255,255,.3)}
+@media(max-width:760px){.pain-grid{grid-template-columns:1fr}.uc-hero{padding:16px 0 40px}.listen-bar{margin-top:103px}}
 </style>
 <script type="application/ld+json">
 {
@@ -66,7 +103,7 @@
    "name": "Can Youbout hide bad reviews?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "No — and no legitimate tool can. What Youbout does is let unhappy guests reach you privately first, so you can fix the problem directly, while happy guests are guided to share publicly."
+    "text": "No, and no legitimate tool can. What Youbout does is let unhappy guests reach you privately first, so you can fix the problem directly, while happy guests are guided to share publicly."
    }
   },
   {
@@ -82,7 +119,7 @@
    "name": "Will the AI replies sound like a robot?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "The Reply Agent writes in your tone — warm, casual, or formal — and naturally mentions specifics from each review, like the dish the guest loved. You can review replies before they publish or let them go out automatically."
+    "text": "The Reply Agent writes in your tone, warm, casual, or formal, and naturally mentions specifics from each review, like the dish the guest loved. You can review replies before they publish or let them go out automatically."
    }
   },
   {
@@ -90,7 +127,7 @@
    "name": "How fast can we start?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Most restaurants are collecting reviews the same day: connect your profiles, print your QR codes, and the system takes over. Every plan starts with a 30-day free trial, no credit card required."
+    "text": "Most restaurants are collecting reviews the same day: connect your profiles, print your QR codes, and the system takes over. Every plan starts with a 30 day free trial, no credit card required."
    }
   }
  ]
@@ -99,7 +136,7 @@
 </head>
 <body>
 
-<div class="topstrip">Start your free trial now — <a href="../pricing.html">no credit card required</a></div>
+<div class="topstrip">Start your free trial now, <a href="../pricing.html">no credit card required</a></div>
 
 <nav id="nav">
   <div class="wrap nav-inner">
@@ -126,30 +163,44 @@
   </div>
 </div>
 
+<!-- AUDIO PLAYER (top of page): restaurants-page.mp3 -->
+<div class="listen-bar">
+  <div class="listen-inner">
+    <button class="listen-btn" id="listenBtn" aria-label="Play audio">
+      <svg id="iconPlay" width="18" height="18" viewBox="0 0 18 18" fill="currentColor"><path d="M5 3.5l10 5.5-10 5.5V3.5z"/></svg>
+      <svg id="iconPause" width="18" height="18" viewBox="0 0 18 18" fill="currentColor" style="display:none"><rect x="4" y="3" width="3.5" height="12" rx="1"/><rect x="10.5" y="3" width="3.5" height="12" rx="1"/></svg>
+    </button>
+    <div class="listen-meta">
+      <span class="listen-label">Listen to this page <span class="listen-dur" id="listenDur"></span></span>
+      <div class="listen-progress-wrap">
+        <div class="listen-progress-bg"><div class="listen-progress-fill" id="progressFill"></div></div>
+        <span class="listen-time" id="listenTime">0:00</span>
+      </div>
+    </div>
+  </div>
+  <audio id="pageAudio" src="../audio/restaurants-page.mp3" preload="metadata"></audio>
+</div>
+
 <header class="uc-hero">
   <div class="wrap">
     <a class="back-link" href="../use-cases.html">← All use cases</a>
     <div class="icon">🍽️</div>
     <span class="kicker">Restaurants & Cafés</span>
     <h1>More reviews for your restaurant, fully automated</h1>
-    <p class="sub">Diners pick where to eat by comparing ratings, photos, and recent reviews. Youbout turns every great meal into a public review and keeps your profiles active — without adding a single task to your day.</p>
+    <p class="sub">Diners pick where to eat by comparing ratings, photos, and recent reviews. Youbout turns every great meal into a public review and keeps your profiles active, without adding a single task to your day.</p>
     <div style="margin-top:28px"><a class="btn btn-primary btn-big" href="../pricing.html">Start Free Trial</a></div>
     <p style="margin-top:14px;font-size:13.5px;color:var(--gray-light)"><b style="color:var(--gray)">30 days free.</b> No credit card required.</p>
   </div>
 </header>
 
-<!-- USE-CASE VIDEO: paste this industry's 16:9 video URL into src and delete the placeholder div -->
+<!-- HERO VIDEO #1 (horizontal 16:9 thumbnail → opens landscape popup) -->
 <section class="pagevideo">
   <div class="wrap">
-    <div class="pagevideo-inner">
-      <video controls playsinline preload="metadata" poster="../og-image.png">
-        <source src="" type="video/mp4">
-      </video>
-      <div class="placeholder">
-        <div class="play"></div>
-        <span>Video coming here</span>
-      </div>
-    </div>
+    <button class="vthumb pagevideo-inner" data-video="6aa2c3189c7b148e584beebc" data-orient="landscape" data-label="VIDEO #1 · Hero, horizontal 16:9" aria-label="Play hero video">
+      <img class="vposter" src="../restaurants-hero-poster.jpg" alt="Diner scanning a Youbout review card at her table" loading="lazy">
+      <span class="vtag">▶ Watch how it works</span>
+      <span class="vplay"></span>
+    </button>
   </div>
 </section>
 
@@ -158,8 +209,8 @@
     <div class="center rv"><span class="kicker">The problem</span><h2>Sound familiar?</h2></div>
     <div class="pain-grid">
       <div class="pain-card rv"><h3>Great food, silent profile</h3><p>Your regulars love you, but almost none of them leave a review. New diners only see a handful of old ratings.</p></div>
-      <div class="pain-card rv"><h3>No time to reply</h3><p>Between services there's no time to answer every Google and Yelp review — so profiles look abandoned.</p></div>
-      <div class="pain-card rv"><h3>Competitors show up first</h3><p>The restaurant next door with more recent reviews wins the search, the map pack, and the walk-in.</p></div>
+      <div class="pain-card rv"><h3>No time to reply</h3><p>Between services there's no time to answer every Google and Yelp review, so profiles look abandoned.</p></div>
+      <div class="pain-card rv"><h3>Competitors show up first</h3><p>The restaurant next door with more recent reviews wins the search, the map pack, and the walk in.</p></div>
     </div>
   </div>
 </section>
@@ -167,11 +218,17 @@
 <section style="padding-top:0">
   <div class="wrap">
     <div class="center rv"><span class="kicker">How Youbout helps</span><h2>What it looks like day to day</h2></div>
+    <!-- VIDEO #2 (horizontal 16:9 thumbnail → opens VERTICAL popup) -->
+    <button class="vthumb uc-scene rv" data-video="6aa2d81307a6f8ff2971ab2c" data-orient="portrait" data-label="VIDEO #2 · Day to day, vertical 9:16" aria-label="Play day to day video" style="display:block;padding:0">
+      <img class="vposter" src="../restaurants-video2-poster.jpg" alt="A Youbout review card on a cafe table while guests come and go" loading="lazy">
+      <span class="vtag">▶ Watch it in action</span>
+      <span class="vplay"></span>
+    </button>
     <div class="how-list" style="margin-left:auto;margin-right:auto">
-      <div class="how-item rv"><div class="n">1</div><div><h3>QR on every table</h3><p>Guests scan a code on the table, the receipt, or the counter and land on your branded review page — your logo, your colors, even a video welcome from the owner. Leaving a review takes 30 seconds.</p></div></div>
-      <div class="how-item rv"><div class="n">2</div><div><h3>AI replies in your voice</h3><p>Every Google, Yelp, and TripAdvisor review gets a professional, personal response instantly — mentioning the dish, the service, the atmosphere. Your profile always looks alive.</p></div></div>
-      <div class="how-item rv"><div class="n">3</div><div><h3>Reviews become social posts</h3><p>Your best reviews turn into ready-to-publish Instagram and Facebook content automatically, so your feed stays active on your busiest weeks.</p></div></div>
-      <div class="how-item rv"><div class="n">4</div><div><h3>Found on Google and AI search</h3><p>Review language becomes content that helps you show up when people ask Google — or ChatGPT — where to eat nearby.</p></div></div>
+      <div class="how-item rv"><div class="n">1</div><div><h3>QR on every table</h3><p>Guests scan a code on the table, the receipt, or the counter and land on your branded review page, your logo, your colors, even a video welcome from the owner. Leaving a review takes 30 seconds.</p></div></div>
+      <div class="how-item rv"><div class="n">2</div><div><h3>AI replies in your voice</h3><p>Every Google, Yelp, and TripAdvisor review gets a professional, personal response instantly, mentioning the dish, the service, the atmosphere. Your profile always looks alive.</p></div></div>
+      <div class="how-item rv"><div class="n">3</div><div><h3>Reviews become social posts</h3><p>Your best reviews turn into ready to publish Instagram and Facebook content automatically, so your feed stays active on your busiest weeks.</p></div></div>
+      <div class="how-item rv"><div class="n">4</div><div><h3>Found on Google and AI search</h3><p>Review language becomes content that helps you show up when people ask Google or ChatGPT where to eat nearby.</p></div></div>
     </div>
   </div>
 </section>
@@ -181,10 +238,10 @@
     <div class="center rv"><span class="kicker">FAQ</span><h2>Frequently asked questions</h2></div>
     <div class="faq-list">
       <details class="faq-item rv"><summary>How do my guests actually leave a review?</summary><p>They scan a QR code at the table or receive an automatic text or WhatsApp message after their visit. It opens your branded review page, they tap a star rating, and they're taken straight to Google, Yelp, or TripAdvisor to post.</p></details>
-      <details class="faq-item rv"><summary>Can Youbout hide bad reviews?</summary><p>No — and no legitimate tool can. What Youbout does is let unhappy guests reach you privately first, so you can fix the problem directly, while happy guests are guided to share publicly.</p></details>
+      <details class="faq-item rv"><summary>Can Youbout hide bad reviews?</summary><p>No, and no legitimate tool can. What Youbout does is let unhappy guests reach you privately first, so you can fix the problem directly, while happy guests are guided to share publicly.</p></details>
       <details class="faq-item rv"><summary>Which review platforms work for restaurants?</summary><p>Google, Yelp, TripAdvisor, and Facebook on every plan, with OpenTable and expanded coverage on higher plans.</p></details>
-      <details class="faq-item rv"><summary>Will the AI replies sound like a robot?</summary><p>The Reply Agent writes in your tone — warm, casual, or formal — and naturally mentions specifics from each review, like the dish the guest loved. You can review replies before they publish or let them go out automatically.</p></details>
-      <details class="faq-item rv"><summary>How fast can we start?</summary><p>Most restaurants are collecting reviews the same day: connect your profiles, print your QR codes, and the system takes over. Every plan starts with a 30-day free trial, no credit card required.</p></details>
+      <details class="faq-item rv"><summary>Will the AI replies sound like a robot?</summary><p>The Reply Agent writes in your tone, warm, casual, or formal, and naturally mentions specifics from each review, like the dish the guest loved. You can review replies before they publish or let them go out automatically.</p></details>
+      <details class="faq-item rv"><summary>How fast can we start?</summary><p>Most restaurants are collecting reviews the same day: connect your profiles, print your QR codes, and the system takes over. Every plan starts with a 30 day free trial, no credit card required.</p></details>
     </div>
   </div>
 </section>
@@ -215,9 +272,9 @@
         </div>
         <div class="foot-col">
           <b>AI Agents</b>
-          <a href="../ai-agent-rio.html">Rio — Review Replies</a>
-          <a href="../ai-agent-sunny.html">Sunny — Social Media</a>
-          <a href="../ai-agent-geo.html">Geo — Visibility</a>
+          <a href="../ai-agent-rio.html">Rio: Review Replies</a>
+          <a href="../ai-agent-sunny.html">Sunny: Social Media</a>
+          <a href="../ai-agent-geo.html">Geo: Visibility</a>
         </div>
         <div class="foot-col">
           <b>Legal</b>
@@ -235,6 +292,15 @@
   </div>
 </footer>
 
+<!-- VIDEO LIGHTBOX (shared) -->
+<div class="vmodal" id="vmodal" aria-hidden="true">
+  <div class="vmodal-backdrop" data-close></div>
+  <div class="vmodal-inner">
+    <button class="vmodal-close" data-close aria-label="Close video">×</button>
+    <div class="vmodal-frame" id="vmodalFrame"></div>
+  </div>
+</div>
+
 <script>
 const nav=document.getElementById("nav");
 addEventListener("scroll",()=>nav.classList.toggle("scrolled",scrollY>10),{passive:true});
@@ -243,6 +309,32 @@ navToggle.addEventListener("click",()=>{navToggle.classList.toggle("open");mobil
 mobileMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{navToggle.classList.remove("open");mobileMenu.classList.remove("open");}));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+const audio=document.getElementById("pageAudio"),lbtn=document.getElementById("listenBtn"),lplay=document.getElementById("iconPlay"),lpause=document.getElementById("iconPause"),lfill=document.getElementById("progressFill"),ltime=document.getElementById("listenTime"),ldur=document.getElementById("listenDur");
+if(audio){
+  const lfmt=s=>Math.floor(s/60)+":"+(Math.floor(s%60)<10?"0":"")+Math.floor(s%60);
+  audio.addEventListener("loadedmetadata",()=>{if(audio.duration&&isFinite(audio.duration))ldur.textContent=Math.round(audio.duration)+" sec"});
+  lbtn.addEventListener("click",()=>{audio.paused?audio.play():audio.pause()});
+  audio.addEventListener("play",()=>{lplay.style.display="none";lpause.style.display="block"});
+  audio.addEventListener("pause",()=>{lplay.style.display="block";lpause.style.display="none"});
+  audio.addEventListener("timeupdate",()=>{if(!audio.duration)return;lfill.style.width=(audio.currentTime/audio.duration*100)+"%";ltime.textContent=lfmt(audio.currentTime)});
+  audio.addEventListener("ended",()=>{lfill.style.width="0%";ltime.textContent="0:00"});
+  document.querySelector(".listen-progress-bg").addEventListener("click",function(e){if(!audio.duration)return;audio.currentTime=(e.offsetX/this.offsetWidth)*audio.duration});
+}
+// video lightbox
+const vmodal=document.getElementById("vmodal"),vframe=document.getElementById("vmodalFrame");
+function openVid(id,orient,label){
+  vmodal.classList.toggle("portrait",orient==="portrait");
+  if(id){
+    vframe.innerHTML='<iframe src="https://play.gumlet.io/embed/'+id+'?autoplay=true" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="origin"></iframe>';
+  }else{
+    vframe.innerHTML='<div class="vph"><b>Video placeholder</b>'+(label||"")+'<br>('+orient+' popup, real video goes here)</div>';
+  }
+  vmodal.classList.add("open");document.body.style.overflow="hidden";
+}
+function closeVid(){vmodal.classList.remove("open");vframe.innerHTML="";document.body.style.overflow="";}
+document.querySelectorAll(".vthumb").forEach(t=>t.addEventListener("click",()=>openVid(t.dataset.video,t.dataset.orient,t.dataset.label)));
+vmodal.querySelectorAll("[data-close]").forEach(el=>el.addEventListener("click",closeVid));
+addEventListener("keydown",e=>{if(e.key==="Escape"&&vmodal.classList.contains("open"))closeVid();});
 </script>
 </body>
 </html>
