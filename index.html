@@ -126,11 +126,6 @@ nav.scrolled{border-bottom-color:var(--line);box-shadow:0 2px 20px rgba(26,27,30
 .welcome .script{display:block;margin-bottom:6px}
 .welcome p.lead{font-size:16.5px;color:var(--ink-2);max-width:760px;margin:18px auto 0}
 .welcome-video{max-width:860px;margin:40px auto 0;position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#101216;box-shadow:var(--shadow-lg);border:1px solid var(--line)}
-.welcome-video video{width:100%;height:100%;object-fit:cover;display:block}
-.welcome-video .placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;background:linear-gradient(135deg,#154CB0,#2878F0)}
-.welcome-video .placeholder .play{width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center}
-.welcome-video .placeholder .play::before{content:"";display:block;border-style:solid;border-width:15px 0 15px 25px;border-color:transparent transparent transparent var(--primary);margin-left:6px}
-.welcome-video .placeholder span{font-size:14px;font-weight:600;opacity:.9}
 
 /* ===== BANNER ===== */
 .banner{background:var(--primary);color:#fff;text-align:center;padding:26px 20px}
@@ -372,14 +367,13 @@ footer{background:#101216;color:#fff;padding:64px 0 40px}
     <h2 class="display rv">Youbout</h2>
     <p class="lead rv">Youbout gives your business its own AI team: collecting reviews, replying in your voice, sharing your wins on social, and making sure your neighborhood — and the internet — knows how good you are.</p>
     <div class="welcome-video rv">
-      <!-- VIDEO: paste your 16:9 URL into src below and delete the placeholder div -->
-      <video controls playsinline preload="metadata" poster="og-image.png">
-        <source src="" type="video/mp4">
-      </video>
-      <div class="placeholder">
-        <div class="play"></div>
-        <span>Video coming here</span>
-      </div>
+      <iframe
+        loading="lazy" title="Gumlet video player"
+        src="https://play.gumlet.io/embed/6aa1f1899c7b148e58447021?background=false&autoplay=false&loop=false&disable_player_controls=false"
+        style="border:none;position:absolute;top:0;left:0;height:100%;width:100%;"
+        referrerpolicy="origin"
+        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;clipboard-write;">
+      </iframe>
     </div>
   </div>
 </section>
